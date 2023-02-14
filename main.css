@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+
+}
+body{
+    background-image: linear-gradient(
+        0deg,
+        rgba(247, 247, 247, 1) 23.8%,
+        rgb(232, 189, 189) 92%
+      );
+    text-transform: capitalize;
+    color: #433636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+.container{
+    z-index: 10;
+    height: 34px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+position: relative;
+display: flex;
+}
+.imgContainer{
+    position: relative;
+    width: 202px;
+
+}
+.imgContainer img{
+    position: absolute;
+    width:100px ;
+    height: 100px;
+    border-radius: 50%;
+    top: -66px;
+    animation:  rot 3s linear infinite;
+    animation-play-state: paused;
+
+}
+.container.play img{
+    animation-play-state: running;
+    z-index: 10;
+
+}
+h1{
+    margin-bottom: 140px;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+button{
+    z-index: 10;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    padding-right: 10px;
+    text-align: center;
+    background-color: transparent;
+}
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+.controls i{
+    font-size: 24px;
+    color: rgb(70, 40, 5);
+
+}
+button:focus i{
+    color: rgb(32, 29, 26);
+    font-size: 30px;
+
+}
+.info{
+    position: absolute;
+    background-color: #ebe5e5;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    z-index: 0;
+    text-align: center;
+    transform: translateY(-90px);
+    opacity: 0;
+    transition: 1s;
+}
+.container.play .info{
+    position: absolute;
+    opacity: 1;
+
+    background-color: #ebe5e5;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    z-index: 0;
+    text-align: center;
+    transform: translateY(-90px);
+}
+.progresss-container{
+
+    width: 50%;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+
+margin-left: 110px;
+}
+.progresss-container .progress{
+
+    width: 0%;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #851f1f;
+
+    cursor: pointer;
+
+}
